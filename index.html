@@ -2,18 +2,34 @@
 <html>
     <head>
         <script>
-        function logToConsoleEvery10() {
-            for(let i=0; i<10; i++){
-                console.log("Hello World");
+            var myIntervalVar;
+            
+            function logToConsoleEvery10() {
+                let myIntervalVar = setInterval(logTextToConsole, 1000);
             }
-        }
+
+            function stopLogToConsoleEvery10() {
+                clearInterval(myIntervalVar);
+            }
+            
+            function logTextToConsole(){
+                console.log("Hello World")
+            }
+
         </script>
     </head>
 <body>
-<h1>Hello World</h1>
-<p>Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output</p>
 
-    <button type="button" onclick="logToConsoleEvery10()">Try it</button>
+<h2>Circle - Solutions Engineer Technical Assessment</h2>
+<p>Instructions:  Create a function that logs “Hello World” to the console every 10 seconds.</p>
+<h2>Solution</h2>
+<p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
+    2. Click the button below to begin logging to the console.
+</p>
+
+    <button type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
+    <!--<button type="button" onclick="clearInterval(myIntervalVar)">Let's Stop It!</button>-->
+    <button type="button" onclick="stopLogToConsoleEvery10()">Let's Stop It!</button>
 
 </body>
 </html>
