@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
-            const myIntervalVar = setInterval(logTextToConsole, 1000);
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript setInterval Demo</title>
 
-            function logToConsoleEvery10() {
-                //let myIntervalVar = setInterval(logTextToConsole, 1000);
-                console.log("info start: " + myIntervalVar);
-                //document.getElementById("end").disabled = false;
-                //document.getElementById("start").disabled = true;
-            }
+  <script>
+    let intervalID;
+ 
+    function toggleColor() {
+      let e = document.getElementById('flashtext');
+      e.style.color = e.style.color == 'red' ? 'blue' : 'red';
+    }
 
-            function stopLogToConsoleEvery10() {
-                clearInterval(myIntervalVar);
-                //console.log("info stop: " + myIntervalVar);
-                //document.getElementById("end").disabled = true;
-            }
-            
-            function logTextToConsole(){
+    function logTextToConsole(){
                 console.log("Hello World");
             }
 
-        </script>
-    </head>
+
+
+
+    function stop() {
+      clearInterval(intervalID);
+    }
+
+    function start() {
+       intervalID = setInterval(logTextToConsole, 1000); 
+    }
+  </script>
+</head>
+ 
 <body>
-
-<h2>2 Circle - Solutions Engineer Technical Assessment</h2>
-<p>Instructions:  Create a function that logs “Hello World” to the console every 10 seconds.</p>
-<h2>Solution</h2>
-<p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
-    2. Click the button below to begin logging to the console.
-</p>
-
-    <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
-    
-    <button id="end" type="button" onclick="stopLogToConsoleEvery10()">Let's Stop It!</button>
-
+  <p id="flashtext">JavScript setInterval Demo</p>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+  
 </body>
 </html>
