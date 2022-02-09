@@ -11,27 +11,27 @@
                 console.log("Hello World");
             }
 
-    function stop() {
+    function stopLogToConsoleEvery10() {
       clearInterval(intervalID);
     }
 
-    function start() {
+    function logToConsoleEvery10() {
        intervalID = setInterval(logTextToConsole, 1000); 
     }
   </script>
 </head>
  
 <body>
-  <h2>4 Circle - Solutions Engineer Technical Assessment</h2>
+  <h2>5 Circle - Solutions Engineer Technical Assessment</h2>
   <p>Instructions:  Create a function that logs “Hello World” to the console every 10 seconds.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
       2. Click the button below to begin logging to the console.
   </p>
   
-      <button id="start" type="button" onclick="start()">Let's Do It!</button>
+      <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
       
-      <button id="end" type="button" onclick="stop()">Let's Stop It!</button>
+      <button id="end" type="button" onclick="stopLogToConsoleEvery10()">Let's Stop It!</button>
   
   </body>
   </html>
