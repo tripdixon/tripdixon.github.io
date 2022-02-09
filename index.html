@@ -2,17 +2,19 @@
 <html>
     <head>
         <script>
-            const myIntervalVar = 1;
+            const myIntervalVar = setInterval(logTextToConsole, 1000);;
 
             function logToConsoleEvery10() {
-                let myIntervalVar = setInterval(logTextToConsole, 1000);
-                document.getElementById("end").disabled = false;
-                document.getElementById("start").disabled = true;
+                //let myIntervalVar = setInterval(logTextToConsole, 1000);
+                console.log("info start: " + myIntervalVar);
+                //document.getElementById("end").disabled = false;
+                //document.getElementById("start").disabled = true;
             }
 
             function stopLogToConsoleEvery10() {
                 clearInterval(myIntervalVar);
-                document.getElementById("end").disabled = true;
+                console.log("info stop: " + myIntervalVar);
+                //document.getElementById("end").disabled = true;
             }
             
             function logTextToConsole(){
@@ -32,7 +34,7 @@
 
     <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
     
-    <button id="end" type="button" onclick="stopLogToConsoleEvery10()" disabled>Let's Stop It!</button>
+    <button id="end" type="button" onclick="stopLogToConsoleEvery10()">Let's Stop It!</button>
 
 </body>
 </html>
