@@ -8,15 +8,18 @@
     let intervalID;
  
     function logTextToConsole(){
-                console.log("Hello World");
+      console.log("Hello World");
             }
 
     function stopLogToConsoleEvery10() {
       clearInterval(intervalID);
+      document.getElementById("end").disabled = true;
     }
 
     function logToConsoleEvery10() {
-       intervalID = setInterval(logTextToConsole, 1000); 
+      intervalID = setInterval(logTextToConsole, 1000); 
+      document.getElementById("end").disabled = false;
+      document.getElementById("start").disabled = true;
     }
   </script>
 </head>
@@ -31,7 +34,7 @@
   
       <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
       
-      <button id="end" type="button" onclick="stopLogToConsoleEvery10()">Let's Stop It!</button>
+      <button id="end" type="button" onclick="stopLogToConsoleEvery10()" disabled>Let's Stop It!</button>
   
   </body>
   </html>
