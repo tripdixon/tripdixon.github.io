@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Circle - Solutions Engineer Technical Assessment - Question 1</title>
+
+  <script>
+    let intervalID;
+ 
+    function stopLogToConsoleEvery10() {
+      clearInterval(intervalID);
+      document.getElementById("end").disabled = true;
+    }
+
+    function logToConsoleEvery10() {
+      console.log("Hello World");
+      intervalID = setInterval(console.log("Hello World"), 10000); 
+      document.getElementById("end").disabled = false;
+      document.getElementById("start").disabled = true;
+    }
+  </script>
+
+</head>
+ 
+<body>
+  <h2>Information</h2>
+  <p>
+    Company: Circle<br>
+    Assignment: Solutions Engineer Technical Assessment, question 1<br>
+    Instructions: Create a function that logs “Hello World” to the console every 10 seconds<br>
+    Candidate: Trip Dixon<br>
+    Date: 2/10/2022 (v1.8)
+  </p>
+  <h2>Solution</h2>
+  <p>
+    1.	To view the console, press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS).<br>
+    2.	Click the "Let's Do It!" button to begin logging to the console every 10 seconds.<br>
+    3.  Click the "Let's Stop It!" button to stop the logging.
+  </p>
+  
+      <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
+      <button id="end" type="button" onclick="stopLogToConsoleEvery10()" disabled>Let's Stop It!</button>
+  
+  </body>
+  </html>
