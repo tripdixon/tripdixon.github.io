@@ -50,17 +50,13 @@
     return decodeURI(dc.substring(begin + prefix.length, end));
     }
 
-    //console.log("The value is: " + getCookie("myValue"));
     console.log("The ON LOAD value of the myValue cookie is: " + getCookie("myValue"));
-
-    //let cookies = document.cookie;
-    //console.log(cookies);
 
     if(getCookie("myValue") == null){
       document.cookie = "myValue=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
       console.log("it was NULL, so I just set the cookie to 0");
     } else {
-      let currentCookieValue = getCookie("myValue");
+      let newCookieValue = getCookie("myValue") + 1;
       document.cookie = "myValue=" + currentCookieValue + "; expires=Wed, 05 Aug 2025 23:00:00 UTC";
       console.log("The value of the myValue cookie was just reset to: " + getCookie("myValue"));
     }
@@ -69,7 +65,7 @@
 </head>
  
 <body>
-  <h2>6 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
+  <h2>8 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
   <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
