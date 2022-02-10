@@ -5,29 +5,39 @@
   <title>Circle - Solutions Engineer Technical Assessment - Question 2</title>
 
   <script>
-    document.cookie = "valuexxx=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
+    document.cookie = "value=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
 
     let cookies = document.cookie;
-
-    //alert(cookies);
     console.log(cookies);
 
     function resetCookieToZero(){
-      //document.cookie = "value=0";
-
-      alert(document.cookie);
+      document.cookie = "value=0";
     }
 
     function deleteCookie(){
       document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "valuexxx=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "value=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
+
+    function getCookie(cName) {
+      const name = cName + "=";
+      const cDecoded = decodeURIComponent(document.cookie); //to be careful
+      const cArr = cDecoded .split('; ');
+      let res;
+      cArr.forEach(val => {
+          if (val.indexOf(name) === 0) res = val.substring(name.length);
+      })
+      return res;
+
+      console.log("The value is: " + res);
+}
 
   </script>
 </head>
  
 <body>
-  <h2>2 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
+  <h2>3 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
   <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
