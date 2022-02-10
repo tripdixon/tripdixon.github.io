@@ -17,6 +17,7 @@
       console.log("The cookie was deleted");
     }
 
+    //I searched for a function that would return a cookie value and pasted this function in
     function getCookie(cName) {
       const name = cName + "=";
       const cDecoded = decodeURIComponent(document.cookie);
@@ -28,34 +29,11 @@
       return res;
     }
 
-/*
-    function getCookie(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
-      if (begin == -1) {
-          begin = dc.indexOf(prefix);
-          if (begin != 0) return null;
-      }
-      else
-      {
-          begin += 2;
-          var end = document.cookie.indexOf(";", begin);
-          if (end == -1) {
-          end = dc.length;
-          }
-      }
-    return decodeURI(dc.substring(begin + prefix.length, end));
-    }
-  */
-
     if(getCookie("myValue") == null){
       document.cookie = "myValue=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
-      //console.log("The value of the cookie is: " + getCookie("myValue"));
     } else {
       let newCookieValue = parseInt(getCookie("myValue"), 10) + 1;
       document.cookie = "myValue=" + newCookieValue + "; expires=Wed, 05 Aug 2025 23:00:00 UTC";
-      //console.log("The value of the cookie was just reset to: " + getCookie("myValue"));
     }
 
     console.log("The value of the cookie is: " + getCookie("myValue"));
@@ -64,11 +42,21 @@
 </head>
  
 <body>
-  <h1>2</h1>
-  <h2>Circle - Solutions Engineer Technical Assessment - Question 2</h2>
-  <p>Instructions:  Create a function that sets a cookie.</p>
+  <h2>Information</h2>
+  <p>
+    Company: Circle<br>
+    Assignment: Solutions Engineer Technical Assessment, question 2<br>
+    Instructions: Create a function that sets a cookie<br>
+    Candidate: Trip Dixon<br>
+    Date: 2/10/2022 (v1.5)
+  </p>
   <h2>Solution</h2>
-  <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
+  <p>
+    1.	To view the console, press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS).<br>
+    2.	The console will display, “The value of the cookie is: x”.<br>
+    3.	Every time the page is refreshed, the value of the cookie will increase.<br>
+    4.	Click the “Reset Cookie” button to set the cookie value back to 0.<br>
+    5.	Click the “Delete Cookie” button to delete the cookie.<br>
   </p>
       
       <button id="reset" type="button" onclick="resetCookieToZero()">Reset Cookie</button>
