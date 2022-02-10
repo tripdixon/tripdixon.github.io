@@ -5,36 +5,26 @@
   <title>Circle - Solutions Engineer Technical Assessment - Question 2</title>
 
   <script>
-    let intervalID;
+    document.cookie = "username=John Doe";
  
-    function logTextToConsole(){
-      console.log("Hello World");
-            }
+    function resetCookieToZero(){
+      //document.cookie = "value=1";
+      //let x = document.cookie;
 
-    function stopLogToConsoleEvery10() {
-      clearInterval(intervalID);
-      document.getElementById("end").disabled = true;
+      alert(document.cookie);
     }
 
-    function logToConsoleEvery10() {
-      intervalID = setInterval(logTextToConsole, 1000); 
-      document.getElementById("end").disabled = false;
-      document.getElementById("start").disabled = true;
-    }
   </script>
 </head>
  
 <body>
-  <h2>Circle - Solutions Engineer Technical Assessment</h2>
-  <p>Instructions:  Create a function that logs “Hello World” to the console every 10 seconds.</p>
+  <h2>Circle - Solutions Engineer Technical Assessment - Question 2</h2>
+  <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
-      2. Click the button below to begin logging to the console.
   </p>
-  
-      <button id="start" type="button" onclick="logToConsoleEvery10()">Let's Do It!</button>
       
-      <button id="end" type="button" onclick="stopLogToConsoleEvery10()" disabled>Let's Stop It!</button>
+      <button id="reset" type="button" onclick="resetCookieToZero()">Reset Cookie</button>
   
   </body>
   </html>
