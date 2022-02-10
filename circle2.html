@@ -7,8 +7,8 @@
   <script>
     document.cookie = "myValue=900; expires=Wed, 05 Aug 2025 23:00:00 UTC";
 
-    let cookies = document.cookie;
-    console.log(cookies);
+    //let cookies = document.cookie;
+    //console.log(cookies);
 
     function resetCookieToZero(){
       document.cookie = "myValue=0";
@@ -35,12 +35,32 @@
       return res;
     }
 
+    function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    return decodeURI(dc.substring(begin + prefix.length, end));
+}
+
+    //console.log("The value is: " + getCookie("myValue"));
     console.log("The value is: " + getCookie("myValue"));
   </script>
 </head>
  
 <body>
-  <h2>2 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
+  <h2>3 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
   <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
