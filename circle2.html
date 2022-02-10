@@ -5,25 +5,36 @@
   <title>Circle - Solutions Engineer Technical Assessment - Question 2</title>
 
   <script>
-    document.cookie = "value=0";
- 
+    document.cookie = "valuexxx=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
+
+    let cookies = document.cookie;
+
+    //alert(cookies);
+    console.log(cookies);
+
     function resetCookieToZero(){
       //document.cookie = "value=0";
 
       alert(document.cookie);
     }
 
+    function deleteCookie(){
+      document.cookie = "useername=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "value=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
   </script>
 </head>
  
 <body>
-  <h2>1 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
+  <h2>2 Circle - Solutions Engineer Technical Assessment - Question 2</h2>
   <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
   <p>1. Press Command + Option + J (Mac) or Control + Shift + J (Windows, Linux, Chrome OS) to open the console to view page output.<br>
   </p>
       
       <button id="reset" type="button" onclick="resetCookieToZero()">Reset Cookie</button>
+      <button id="delete" type="button" onclick="deleteCookie()">Delete Cookie</button>
   
   </body>
   </html>
