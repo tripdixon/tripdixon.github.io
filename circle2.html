@@ -9,12 +9,12 @@
     function resetCookieToZero(){
       document.cookie = "myValue=0";
       let cookies = document.cookie;
-      console.log("The cookie was reset to a value of 0);
+      console.log("The cookie was reset to a value of 0");
     }
 
     function deleteCookie(){
       document.cookie = "myValue=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      console.log("The cookie was just deleted");
+      console.log("The cookie was deleted");
     }
 
     function getCookie(cName) {
@@ -49,22 +49,22 @@
     }
   */
 
-    //console.log("The ON LOAD value of the myValue cookie is: " + getCookie("myValue"));
-
     if(getCookie("myValue") == null){
       document.cookie = "myValue=0; expires=Wed, 05 Aug 2025 23:00:00 UTC";
-      console.log("The value of the cookie is: " + getCookie("myValue"));
+      //console.log("The value of the cookie is: " + getCookie("myValue"));
     } else {
       let newCookieValue = parseInt(getCookie("myValue"), 10) + 1;
       document.cookie = "myValue=" + newCookieValue + "; expires=Wed, 05 Aug 2025 23:00:00 UTC";
-      console.log("The value of the cookie was just reset to: " + getCookie("myValue"));
+      //console.log("The value of the cookie was just reset to: " + getCookie("myValue"));
     }
 
+    console.log("The value of the cookie is: " + getCookie("myValue"));
+    
   </script>
 </head>
  
 <body>
-  <h1>1</h1>
+  <h1>2</h1>
   <h2>Circle - Solutions Engineer Technical Assessment - Question 2</h2>
   <p>Instructions:  Create a function that sets a cookie.</p>
   <h2>Solution</h2>
