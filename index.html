@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+
+    import Resolution from "@unstoppabledomains/resolution";
+
+    const { default: Resolution } = require('@unstoppabledomains/resolution');
+    const resolution = new Resolution();
+
+    function resolveCustomRecord(domain, record) {
+      resolution
+        .records(domain, [record])
+        .then((value) => console.log(`Domain ${domain} ${record} is: ${value}`))
+        .catch(console.error);
+    }
+
+    resolveCustomRecord('homecakes.crypto', 'custom.record.value');
+
+  </script>
 </head>
  
 <body>
